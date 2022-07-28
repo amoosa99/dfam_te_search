@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- Page with UI to search for transposable elements in mySQL database -->
+<html lang="en">
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>Dfam RepeatModeler Transposable Element Search</title>
+
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/
+			     svn/trunk/html5.js"></script>
+	<![endif]-->
+
+    <!-- CSS for JQuery -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/
+		jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <!-- CSS for result table formatting -->
+    <link rel="stylesheet" href="./css/search.css">
+
+    <!-- JQuery and JQueryUI scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/
+		jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/
+		libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Scripts for search, autocomplete, and download -->
+    <script type="text/javascript" src="js/search_elem.js"></script>
+    <script type="text/javascript" src="js/autocomplete.js"></script>
+    <script type="text/javascript" src="js/create_fasta.js"></script>
+
+</head>
+
+<body id="main">
+
+    <h1>Dfam RepeatModeler Transposable Element Search</h1>
+
+    <a href="https://dfam.org/classification/tree" class="dfam_link">
+	<!-- Link to Dfam classification page -->
+	Click to see the different Dfam Element Families
+    </a>
+
+    <form name="search_te" id="search_te" action="">
+
+	<!-- text boxes for searching by type/family and sequence -->
+        <input name="search_term" type="search" id="search_term" value=""
+		 autofocus="autofocus" placeholder="Search by type/family"/>
+	<input name="search_seq" type="search" id="search_seq" value=""
+		placeholder="Search by sequence">
+
+	<!-- buttons to search and download -->
+        <input name="submit" type="submit" id="submit" value="Search">
+	<input name="download" type="submit" id="download" value="Download">
+
+    </form>
+
+    <section id='results'>
+	<!-- displays search results in table -->
+
+        <p>
+            <span id='match_count'>0</span> match(es) found.
+        </p>
+
+        <table id="result_table" class="result_table">
+	
+	    <colgroup>
+		<!-- sets styles for each table column -->
+
+		<col class="id">
+		<col span="2" class="elem">
+		<col class="seq">
+		<col class="org">
+	    </colgroup>
+
+            <thead>
+		<!-- table header with column names -->
+
+		<tr>
+			<th>Sequence ID</th>
+			<th>Element Type</th>
+			<th>Element Family</th>
+			<th>Element Sequence (First 25 bases)</th>
+			<th>Organism</th>
+		</tr>
+
+            </thead>
+
+            <tbody>
+                <!-- table body populated by js/search_elem.js script -->
+            </tbody>
+	</table>
+    </section>
+
+</body>
+
+</html>

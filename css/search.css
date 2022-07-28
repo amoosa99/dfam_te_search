@@ -1,0 +1,45 @@
+/*
+ * Style sheet for transposable element search webpage
+ */
+
+/* add border to table cells */
+.result_table th, .result_table td {
+	border: 1px solid black;	
+	padding: 10px
+}
+
+/* collapse table border */
+.result_table {
+	border-collapse: collapse;
+}
+
+/* color ID column */
+col.id {
+	background-color: #f399ff
+}
+
+/* color element type and family columns */
+col.elem {
+	background-color: #cce6ff
+}
+
+/* color sequence column */
+col.seq {
+	background-color: #ccffcc
+}
+
+/* color organism column */
+col.org {
+	background-color: #ffe6cc
+}
+
+/* hide dummy element used for file downloads */
+a.dummy_dl {
+	display: none;
+}
+
+td.seq {
+	max-width: 25ch;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
