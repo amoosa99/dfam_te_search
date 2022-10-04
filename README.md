@@ -98,7 +98,9 @@ Creating the Transposable Element Database
 
 Accessing the Search Tool
 
-1. Open a web browser and navigate to 'localhost:80/dfam_te_search/search.html'
+1. Open a web browser and navigate to:
+
+	'localhost:80/dfam_te_search-1.1/search.html'
 
 2. Searches can now be done by element type, element family, or sequence. 
    Beginning to type an element type or family will return an autocomplete
