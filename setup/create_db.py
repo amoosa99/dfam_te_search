@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!../venv/bin/python3
 
 import re
 import sys
@@ -33,11 +33,12 @@ def create_db():
 
     #creates sequences table
     qry = """CREATE TABLE IF NOT EXISTS sequences (
+             seq_num SMALLINT NOT NULL AUTO_INCREMENT,
              seq_id VARCHAR(50) NOT NULL,
              seq TEXT NOT NULL, 
              elem_id SMALLINT NOT NULL,
              org_id SMALLINT NOT NULL,
-             PRIMARY KEY(seq_id)
+             PRIMARY KEY(seq_num)
              )"""
     cursor.execute(qry)
 

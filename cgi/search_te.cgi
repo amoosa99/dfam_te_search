@@ -1,8 +1,9 @@
-#!/usr/bin/env python3
+#!../venv/bin/python3
 
 import cgi, json
 import os
 import mysql.connector
+import configparser
 
 """A CGI script that searches a transposable element database using user defined search terms from an HTML form and outputs the results in JSON format"""
 
@@ -46,7 +47,7 @@ def query_db(term, seq):
         
     #gets MySQL username and password from config file
     parser = configparser.ConfigParser()
-    parser.read("./setup/config.txt")
+    parser.read("../setup/config.txt")
     username = parser.get("config", "username")
     pswd = parser.get("config", "pswd")
 
@@ -54,6 +55,9 @@ def query_db(term, seq):
     conn = mysql.connector.connect(user=username,
 	 			   password=pswd,
 				   host='localhost', database='tedb')
+
+    #cursor for searching
+    cursor = conn.cursor(buffered=True)
     
     #the mysql query
     qry = """

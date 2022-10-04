@@ -1,8 +1,9 @@
-#!/usr/bin/env python3
+#!../venv/bin/python3
 
 import cgi, json
 import os
 import mysql.connector
+import configparser
 
 """A CGI script that searches a transposable element database to autocomplete
 element name searches in an HTML form. Limits results to five to prevent
@@ -42,7 +43,7 @@ def query_db(term):
 
     #gets MySQL username and password from config file
     parser = configparser.ConfigParser()
-    parser.read("./setup/config.txt")
+    parser.read("../setup/config.txt")
     username = parser.get("config", "username")
     pswd = parser.get("config", "pswd")
 
